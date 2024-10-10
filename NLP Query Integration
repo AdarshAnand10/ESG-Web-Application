@@ -1,0 +1,15 @@
+import openai
+
+openai.api_key = "sk-proj-aVAdNKD2XYLtBFIY-tEo17SHojXusLWFMr3uZFKV-B37Fi8tYl0c2E_sSu_O1lR9ldI56eHxlyT3BlbkFJC-LxSMkO236nl7wDjY776IyKUdzQuOQwiaJciMnnVn6CJOGybgJkd8FJg9g1MQwOMBHxPjVyM"
+
+def query_esg_metrics(query):
+    response = openai.Completion.create(
+        engine="gpt-4o-mini",
+        prompt=query,
+        max_tokens=100
+    )
+    return response.choices[0].text.strip()
+
+query = "What are the ESG metrics for Company XYZ?"
+response = query_esg_metrics(query)
+print(response)
