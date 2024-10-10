@@ -1,0 +1,10 @@
+const socket = new WebSocket('wss://example.com/realtime');
+
+socket.onmessage = function(event) {
+    const data = JSON.parse(event.data);
+    updateDashboard(data);
+};
+
+function updateDashboard(data) {
+    // Update your dashboard with the new data
+}
